@@ -1,0 +1,32 @@
+# Напишите программу, которая принимает на вход число N и выдает набор произведений чисел от 1 до N
+n = int(input('Введите число: '))
+list = [x for x in range(1, n +1)]
+print(list)
+factorial = 1
+for i in range(1, n+1):
+    factorial = lambda x: 1 if x == 0 else x * factorial(x - 1)
+    print(factorial(i))
+    
+#Задайте список из нескольких чисел. Напишите программу, которая найдёт сумму элементов списка, стоящих на нечётной позиции.
+
+
+def sum_odd_index(lst):
+    s = 0
+    for i in range(len(lst)):
+        if i % 2 != 0:
+            s += lst[i]
+    print(f"Сумма равна: {s}")
+    
+
+lst = list(map(int, input("Введите числа через пробел:\n").split()))
+sum_odd_index(lst)
+
+#Задайте список из n чисел последовательности (1+1/i)**i и выведите на экран их сумму.
+n = int(input("Введите число: "))
+lst = [x for x in range(1, n+1)]
+lst = list(map(lambda x:round((1+1/x)**x, 1),lst))
+print(lst)
+sum = 0
+for x in lst:
+   sum += x
+print(round(sum, 1))
